@@ -2,7 +2,7 @@
 Random Forest Classification, test to classify ditchlike streams. 
 
 # First thing:
-Open the top to bottom hierarchy document called: 01_basic_work_first_manuscript in 05_Misc/Documentation. It's the easiest way to follow the start of process and use these files in here.
+Open the top to bottom hierarchy document called: 01_basic_work_first_manuscript in 03_Manuscript/Documentation. It's the easiest way to follow the start of process and use these files in here.
 
 # Readme first, contents of the project explained
 This directory is created based on a standard data analysis template (section 1. below, Jonas Hag). 
