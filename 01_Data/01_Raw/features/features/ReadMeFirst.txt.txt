@@ -1,0 +1,1 @@
+Needed npy files comes in here. Npy files are created from tiff files. Code is in folder 00_prework_files.

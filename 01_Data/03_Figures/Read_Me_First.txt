@@ -1,0 +1,1 @@
+Images from 01_terrain_indices_experiment.ipyng made with the normalization code in the file. 
