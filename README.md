@@ -32,6 +32,9 @@ PurOja contents:
 - 04_presentation
 - 05_Misc
 
+## Paralllixed working
+Code for parallellized working in Puhti is at 02_Analysis/01_Scripts. The same code was used with 15 CPU's and 4 CPU's by adjusting the amount of CPY cores. Code towards to CPU amount is in the zarr_processing.py file and in the final 02_Analysis/01_Scripts/03_RF_modelling file. 
+
 ## Materials to read, or making searches about codes and techniques
 Whiteboxtools: https://www.whiteboxgeo.com/
 SAGA-GIS Module Library Documentation: https://saga-gis.sourceforge.io/saga_tool_doc/2.3.0/index.html
