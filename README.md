@@ -15,9 +15,8 @@ PurOja contents:
 - README.md
 - LICENSE.md
 - 01_Data/01_raw
-- 01_Data/01_raw/prework_npy (example images from prework files, not all of them)
 - 01_Data/01_raw/features (pickles, the feature material is saved in here)
-- 01_Data/01_raw/features (npy files needed for working)
+- 01_Data/01_raw/features (npy files needed for working shared as external link)
 - 01_Data/02_Clean
 - 01_Data/02_Clean/data (resampled data based on the original study was in here)
 - 01_Data/02_Clean/experiment_data (used in 01_terrain_indices_experiment is saved in here)
