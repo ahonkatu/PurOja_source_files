@@ -14,20 +14,21 @@ If you start from scratch:
 PurOja contents:
 - README.md
 - LICENSE.md
-- 01_Data/01_raw/
+- 01_Data/01_raw
 - 01_Data/01_raw/prework_npy (example images from prework files, not all of them)
 - 01_Data/01_raw/features (pickles, the feature material is saved in here)
 - 01_Data/01_raw/features (npy files needed for working)
-- 01_Data/02_Clean/
+- 01_Data/02_Clean
 - 01_Data/02_Clean/data (resampled data based on the original study was in here)
 - 01_Data/02_Clean/experiment_data (used in 01_terrain_indices_experiment is saved in here)
 - 01_Data/02_Clean/03_Figures (images from 01_terrain indices images saved in here)
 - 02_Analysis/01_scripts/ (arranged in numbered files and/or numbered scripts used)
 - 02_Analysis/01_scripts/ 00_prework_files
-- 02_Analysis/01_scripts/ 02_view_functions
-- 02_Analysis/01_scripts/ 02_Results
-- 02_Analysis/01_scripts/ 03_Figures (RF visializations)
-- 02_Analysis/01_scripts/ 04_Tables (empty)
+- 02_Analysis/01_scripts/ 01_terrain_indices_experiment
+- 02_Analysis/01_scripts/ 02_view_functions (functions used in creating the experiment festures)
+- 02_Analysis/02_Results
+- 02_Analysis/03_Figures (RF visializations)
+- 02_Analysis/04_Tables (empty)
 - 03_Manuscript/01_basic_work_first_manuscript (Word, pdf)
 - 04_presentation
 - 05_Misc
