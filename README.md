@@ -39,6 +39,9 @@ Code for parallellized working in Puhti is at 02_Analysis/01_Scripts. The same c
 ## Working with Win 11
 The file GDAL-3.4.3-cp311-cp311-win_amd64.whl was needed to work with GDAL (Geospatial Data Abstraction Library).
 
+### AI
+ChatGPT and Claude was used in reading the error messages and solving coding problems. 
+
 ## Materials to read, or making searches about codes and techniques
 - Whiteboxtools: https://www.whiteboxgeo.com/
 - SAGA Gis Module Library Documentation: https://saga-gis.sourceforge.io/saga_tool_doc/2.3.0/index.html
