@@ -33,7 +33,7 @@ PurOja contents:
 - 04_Presentation
 - 05_Misc
 
-## Parallelized working
+## Supercomputer Puhti
 Code for parallellized working in Puhti is at 02_Analysis/01_Scripts. The same code was used with 15 CPU's and 4 CPU's by adjusting the amount of cores. Code towards to CPU amount is in the zarr_processing.py file and in the final 02_Analysis/01_Scripts/03_RF_modelling file. 
 
 ## Working with Win 11
