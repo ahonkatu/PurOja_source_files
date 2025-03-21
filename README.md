@@ -41,8 +41,8 @@ The file GDAL-3.4.3-cp311-cp311-win_amd64.whl was needed to work with GDAL (Geos
 
 ## Materials to read, or making searches about codes and techniques
 - Whiteboxtools: https://www.whiteboxgeo.com/
-- SAGA-GIS Module Library Documentation: https://saga-gis.sourceforge.io/saga_tool_doc/2.3.0/index.html
-- SAGA is also in QGIS
+- SAGA Gis Module Library Documentation: https://saga-gis.sourceforge.io/saga_tool_doc/2.3.0/index.html
+- SAGA Gis is also in QGIS with Grass
 - ArcGIS Pro documentation: https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources 
 - The Python Standard Library: https://docs.python.org/3/library/index.html
 
