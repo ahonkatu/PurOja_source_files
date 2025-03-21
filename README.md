@@ -40,7 +40,7 @@ Code for parallellized working in Puhti is at 02_Analysis/01_Scripts. The same c
 The file GDAL-3.4.3-cp311-cp311-win_amd64.whl was needed to work with GDAL (Geospatial Data Abstraction Library).
 
 ### AI
-ChatGPT and Claude was used in reading the error messages and solving coding problems. 
+ChatGPT and Claude was used in reading the error messages and in solving the problems with coding. 
 
 ## Materials to read, or making searches about codes and techniques
 - Whiteboxtools: https://www.whiteboxgeo.com/
