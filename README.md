@@ -29,7 +29,7 @@ PurOja contents:
 - 02_Analysis/02_Results
 - 02_Analysis/03_Figures (RF visializations)
 - 02_Analysis/04_Tables (empty)
-- 03_Manuscript/01_basic_work_first_manuscript (Word, pdf)
+- 03_Manuscript/01_basic_work_first_manuscript (Word, pdf, link to external location for downloading)
 - 04_Presentation
 - 05_Misc
 
