@@ -26,6 +26,7 @@ from skimage.transform import resize  # For downsampling
 from scipy.ndimage import gaussian_filter, generic_filter as gf
 from scipy.ndimage import median_filter, uniform_filter 
 from scipy.ndimage import generic_filter, binary_closing
+from scipy.ndimage import sobel
 
 import datetime
 
@@ -267,64 +268,134 @@ def process_hpmf(hpmf, shift_range=5):
 
 
 #original HPMF filter =slow
-# @jit(nopython=True)
-# def _reclassify_hpmf_filter(arr):
-#     """
-#     Internally used reclassification of HPMF with different thresholds.
-#     """
-#     binary = np.copy(arr)
-#     for i in range(len(arr)):
-#         for j in range(len(arr[i])):
-#             if arr[i][j] < 0.000001 and arr[i][j] > -0.000001:
-#                 binary[i][j] = 100
-#             else:
-#                 binary[i][j] = 0
-#     return binary
+@jit(nopython=True)
+def _reclassify_hpmf_filter(arr):
+     """
+     Internally used reclassification of HPMF with different thresholds.
+     """
+     binary = np.copy(arr)
+     for i in range(len(arr)):
+         for j in range(len(arr[i])):
+             if arr[i][j] < 0.000001 and arr[i][j] > -0.000001:
+                 binary[i][j] = 100
+             else:
+                 binary[i][j] = 0
+     return binary
 
 
-# @jit(nopython=True)
-# def _reclassify_hpmf_filter_mean(arr):
-#     """
-#     Internally used reclassification of HPMF with different thresholds.
-#     """
-#     reclassify = np.copy(arr)
-#     for i in range(len(arr)):
-#         for j in range(len(arr[i])):
-#             if arr[i][j] < 1:
-#                 reclassify[i][j] = 0
-#             elif arr[i][j] < 3:
-#                 reclassify[i][j] = 1
-#             elif arr[i][j] < 7:
-#                 reclassify[i][j] = 2
-#             elif arr[i][j] < 10:
-#                 reclassify[i][j] = 50
-#             elif arr[i][j] < 20:
-#                 reclassify[i][j] = 75
-#             elif arr[i][j] < 50:
-#                 reclassify[i][j] = 100
-#             elif arr[i][j] < 80:
-#                 reclassify[i][j] = 300
-#             elif arr[i][j] < 100:
-#                 reclassify[i][j] = 600
-#             else:
-#                 reclassify[i][j] = 1000
-#     return reclassify
+@jit(nopython=True)
+def _reclassify_hpmf_filter_mean(arr):
+     """
+     Internally used reclassification of HPMF with different thresholds.
+     """
+     reclassify = np.copy(arr)
+     for i in range(len(arr)):
+         for j in range(len(arr[i])):
+             if arr[i][j] < 1:
+                 reclassify[i][j] = 0
+             elif arr[i][j] < 3:
+                 reclassify[i][j] = 1
+             elif arr[i][j] < 7:
+                 reclassify[i][j] = 2
+             elif arr[i][j] < 10:
+                 reclassify[i][j] = 50
+             elif arr[i][j] < 20:
+                 reclassify[i][j] = 75
+             elif arr[i][j] < 50:
+                 reclassify[i][j] = 100
+             elif arr[i][j] < 80:
+                 reclassify[i][j] = 300
+             elif arr[i][j] < 100:
+                 reclassify[i][j] = 600
+             else:
+                 reclassify[i][j] = 1000
+     return reclassify
 
 
-# @jit
-# def hpmf_filter(arr):
-#     """
-#     HPMF ditch enhancement.
-#     """
-#     normalized_arr = da.from_array(
-#         _reclassify_hpmf_filter(arr), chunks=(800, 800))
+@jit
+def hpmf_filter(arr):
+     """
+     HPMF ditch enhancement.
+     """
+     normalized_arr = da.from_array(
+         _reclassify_hpmf_filter(arr), chunks=(800, 800))
 
-#     mean = d_gf(d_gf(d_gf(d_gf(normalized_arr, np.amax, footprint=create_circular_mask(1)), np.amax, footprint=create_circular_mask(
-#         1)), np.median, footprint=create_circular_mask(2)), np.nanmean, footprint=create_circular_mask(5)).compute(scheduler='processes')
-#     reclassify = da.from_array(
-#         _reclassify_hpmf_filter_mean(mean), chunks=(800, 800))
+     mean = d_gf(d_gf(d_gf(d_gf(normalized_arr, np.amax, footprint=create_circular_mask(1)), np.amax, footprint=create_circular_mask(
+         1)), np.median, footprint=create_circular_mask(2)), np.nanmean, footprint=create_circular_mask(5)).compute(scheduler='processes')
+     reclassify = da.from_array(
+         _reclassify_hpmf_filter_mean(mean), chunks=(800, 800))
 
-#     return d_gf(reclassify, np.nanmean, footprint=create_circular_mask(7)) #smaller one than in the study
+     return d_gf(reclassify, np.nanmean, footprint=create_circular_mask(7)) #smaller one than in the study
+
+def hpmf_f(data, mask_radius=6):
+    """
+    Detects meandering forms using circular masks and Dask-compatible filters.
+
+    Parameters:
+    - data: Input 2D array (Dask array or NumPy array).
+    - mask_radius: Radius of the circular mask.
+
+    Returns:
+    - result: Processed 2D array with enhanced meandering forms.
+    """
+    if not isinstance(data, da.Array):
+        data_dask = da.from_array(data, chunks=(800, 800))
+    else:
+        data_dask = data
+
+    # Normalize input data for processing
+    data_norm = (data_dask - data_dask.min()) / (data_dask.max() - data_dask.min())
+
+    # Create the circular mask
+    circular_mask = create_circular_mask(mask_radius)
+
+    # Apply filters to enhance meandering forms (nested filters combined)
+    enhanced_data = data_norm  # Placeholder, no processing applied for now
+
+    return enhanced_data
+
+def enhance_streams(image, sigma=1):
+    """
+    Enhance stream-like structures by applying Gaussian smoothing and Sobel edge detection.
+    
+    Parameters:
+    - image: 2D array (Dask or NumPy array).
+    - sigma: Standard deviation for the Gaussian filter to smooth the image before enhancing edges.
+
+    Returns:
+    - Enhanced image highlighting stream-like structures.
+    """
+    smoothed_image = gaussian_filter(image, sigma=sigma)
+
+    sobel_x = sobel(smoothed_image, axis=0)
+    sobel_y = sobel(smoothed_image, axis=1)
+
+    sobel_magnitude = np.hypot(sobel_x, sobel_y)
+
+    threshold = np.percentile(sobel_magnitude, 95)  # Keep top 5% edges
+    enhanced_streams = sobel_magnitude > threshold
+
+    return enhanced_streams
+
+def hpmf_f_visualisation(hpmf, sigma=1):
+    """
+    Process the HPMF data without visualization.
+    
+    Parameters:
+    - hpmf: 2D NumPy array containing HPMF data.
+    - sigma: Standard deviation for the Gaussian filter.
+
+    Returns:
+    - Processed HPMF data.
+    """
+    hpmf[hpmf == -99999] = np.nan  # Replace invalid values with NaN
+
+    if hpmf.ndim != 2:
+        raise ValueError("HPMF data must be a 2D array.")
+
+    hpmf_f_processed = enhance_streams(hpmf, sigma=sigma)
+
+    return hpmf_f_processed
 
 #the idea is to clean up the image with some fluvial features left to see
 #edge features for further processing
