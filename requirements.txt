@@ -1,0 +1,15 @@
+python=3.9
+numpy
+matplotlib
+scikit-learn
+scikit-image
+python-math
+random2
+pillow
+whitebox
+pandas
+rasterio
+shapely
+setuptools
+pillow
+opencv-python

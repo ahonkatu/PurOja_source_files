@@ -42,8 +42,6 @@ SAGA-GIS Module Library Documentation: https://saga-gis.sourceforge.io/saga_tool
 - SAGA is also in QGIS
 ArcGIS Pro documentation: https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources 
 The Python Standard Library: https://docs.python.org/3/library/index.html
-- libraries in requirements.txt for example (there are some libraries used in problem solving)
-Visual Studio Code documentation: https://code.visualstudio.com/docs
 
 https://doi.org/10.1016/j.eswa.2022.116961 
 
