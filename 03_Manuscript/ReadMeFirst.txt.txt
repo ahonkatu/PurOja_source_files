@@ -1,0 +1,1 @@
+You are free to download and use the open Word-file notes. Create your own notes, make your own workflow. 
