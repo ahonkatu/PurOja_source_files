@@ -43,8 +43,11 @@ SAGA-GIS Module Library Documentation: https://saga-gis.sourceforge.io/saga_tool
 ArcGIS Pro documentation: https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources 
 The Python Standard Library: https://docs.python.org/3/library/index.html
 
+Original source article and contribution to the work done:
 https://doi.org/10.1016/j.eswa.2022.116961 
 
 https://figshare.com/projects/Detecting_ditches_using_machine_learning_on_high-resolution_DEMs/72779
+
+Thanks to: JYU, CSC and Jonas Flyckt et al.
 
 For more information about the integration of git and RStudio, check out https://happygitwithr.com.
