@@ -40,13 +40,14 @@ Code for parallellized working in Puhti is at 02_Analysis/01_Scripts. The same c
 The file GDAL-3.4.3-cp311-cp311-win_amd64.whl was needed to work with GDAL (Geospatial Data Abstraction Library).
 
 ## Materials to read, or making searches about codes and techniques
-Whiteboxtools: https://www.whiteboxgeo.com/
-SAGA-GIS Module Library Documentation: https://saga-gis.sourceforge.io/saga_tool_doc/2.3.0/index.html
+- Whiteboxtools: https://www.whiteboxgeo.com/
+- SAGA-GIS Module Library Documentation: https://saga-gis.sourceforge.io/saga_tool_doc/2.3.0/index.html
 - SAGA is also in QGIS
-ArcGIS Pro documentation: https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources 
-The Python Standard Library: https://docs.python.org/3/library/index.html
+- ArcGIS Pro documentation: https://www.esri.com/en-us/arcgis/products/arcgis-pro/resources 
+- The Python Standard Library: https://docs.python.org/3/library/index.html
 
 Original source article and contribution to the work done:
+
 https://doi.org/10.1016/j.eswa.2022.116961 
 
 https://figshare.com/projects/Detecting_ditches_using_machine_learning_on_high-resolution_DEMs/72779
