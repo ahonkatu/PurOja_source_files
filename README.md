@@ -30,7 +30,7 @@ PurOja contents:
 - 02_Analysis/03_Figures (RF visializations)
 - 02_Analysis/04_Tables (empty)
 - 03_Manuscript/01_basic_work_first_manuscript (Word, pdf)
-- 04_presentation
+- 04_Presentation
 - 05_Misc
 
 ## Parallelized working
