@@ -52,5 +52,3 @@ https://doi.org/10.1016/j.eswa.2022.116961
 https://figshare.com/projects/Detecting_ditches_using_machine_learning_on_high-resolution_DEMs/72779
 
 Thanks to: JYU, CSC and Jonas Flyckt et al.
-
-For more information about the integration of git and RStudio, check out https://happygitwithr.com.
