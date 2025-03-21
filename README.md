@@ -2,7 +2,7 @@
 Random Forest Classification, test to classify ditchlike streams. 
 
 # First thing:
-Open the top to bottom hierarchy document called: 01_basic_work_first_manuscript in 03_Manuscript/Documentation. It's the easiest way to follow the start of process and use these files in here.
+Open the top to bottom hierarchy document called: 01_basic_work_first_manuscript in 03_Manuscript/Documentation. It's the easiest way to follow the start of process and use these files in here. 
 
 # Readme first, contents of the project explained
 This directory is created based on a standard data analysis template (section 1. below, Jonas Hag). 
@@ -24,7 +24,7 @@ PurOja contents:
 - 02_Analysis/01_scripts/ (arranged in numbered files and numbered scripts used)
 - 02_Analysis/01_scripts/Functions (functions used in creating the database from the GEOTif-images)
 - 02_Analysis/01_scripts/ 00_prework_files
-- 02_Analysis/01_scripts/ 01_terrain_indices_experiment
+- 02_Analysis/01_scripts/ 01_terrain_indices_experiment (one way to start: experimenting based on the Flyckt & al. documentation)
 - 02_Analysis/01_scripts/ 02_view_functions (functions used in creating the experiment festures)
 - 02_Analysis/02_Results
 - 02_Analysis/03_Figures (RF visializations)
