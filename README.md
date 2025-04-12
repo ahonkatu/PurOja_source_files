@@ -37,7 +37,7 @@ PurOja contents:
 Code for parallellized working in Puhti is at 02_Analysis/01_Scripts. The same code was used with 15 CPU's and 4 CPU's by adjusting the amount of cores. Code towards to CPU amount is in the zarr_processing.py file and in the final 02_Analysis/01_Scripts/03_RF_modelling file. 
 
 ## Working with Win 11
-The file GDAL-3.4.3-cp311-cp311-win_amd64.whl was needed to work with GDAL (Geospatial Data Abstraction Library).
+The file GDAL-3.4.3-cp311-cp311-win_amd64.whl was needed to work with GDAL (Geospatial Data Abstraction Library). Working with 4 CPU's and 64 Gb of RAM was also possible, but took more time. 
 
 ### AI
 ChatGPT and Claude was used in reading the error messages and in solving the problems with coding. 
