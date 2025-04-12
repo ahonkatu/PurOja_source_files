@@ -1,4 +1,4 @@
-# PurOta
+# PurOja, recognising natural streams
 Random Forest Classification, test to classify ditchlike streams. Balancing with SMOTE, stage: development project (deadline stage of this work).
 
 # First thing:
