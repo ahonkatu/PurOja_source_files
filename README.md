@@ -1,5 +1,5 @@
 # PurOja, recognising natural streams
-Random Forest Classification, test to classify ditchlike streams. Balancing with SMOTE, stage: development project (deadline stage of this work).
+Random Forest Classification, test to classify ditchlike streams. Balancing with SMOTE, stage: development project (deadline before finishing).
 
 # First thing:
 Open the top to bottom hierarchy document called: 01_basic_work_first_manuscript in 03_Manuscript/Documentation. It's the easiest way to follow the start of process and use these files in here. In the ReadMeFiles there is short descriptions or link to the source material needed. Python version used were Python 3.10 and 3.11. 
