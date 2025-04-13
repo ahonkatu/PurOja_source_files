@@ -1,1 +1,1 @@
-You are free to download and use the open Word-file notes. Create your own notes, make your own workflow. 
+You are free to download and use the open Word-file notes. Create your own notes, make your own workflow. The documentation can be dowloaded from here: https://drive.google.com/drive/folders/1gGo-vY3o8ULQcrgVI3pB3rYmfLUDih1G?usp=sharing 
