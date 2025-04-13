@@ -1,1 +1,1 @@
-Pickels with features are cretaed in this file.
+Pickels with features are cretaed in this file. This the the output path file. Pickels were changed to zarr files in the end. 
